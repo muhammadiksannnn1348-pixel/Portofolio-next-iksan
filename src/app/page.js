@@ -17,15 +17,15 @@ const skills = [
 const hobi = [
   { nama: "Berlari" },
   { nama: "Berenang" },
-  { nama: "bermain game" },
+  { nama: "Bermain game" },
   { nama: "Desain poster" },
   { nama: "Editing video" },
 ];
 
 const citaCita = [
-  { deskripsi: "Menuntaskan Kelas Industri UBIG sampai 4 Semester" },
-  { deskripsi: "Magang di Perusahaan Teknologi" },
-  { deskripsi: "Bekerja sebagai Web Developer" },
+  { deskripsi: "Korps Brimob Polri" },
+  { deskripsi: "Masuk Universitas STIN/ITB" },
+  { deskripsi: "Menjadi Programer Frontend Dev" },
 ];
 
 const jadwal = [
@@ -38,17 +38,18 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col justify-between">
       <main className="mx-auto max-w-5xl px-4 py-10 space-y-5">
+        {/* Hero */}
         <Hero
           nama="M.Iksanuddin"
           tagline="Siswa kelas XI SMK, calon Junior Web Developer di Kelas Industri UBIG."
         />
-
+        {/* Tentang */}
         <Kartu judul="Tentang">
           <p className="text-gray-600">
             Saya tinggal di kota pasuruan dan senang mencoba hal baru di dunia teknologi. saya ingin bisa membuat website yang bermanfaat untuk sekolah dan UMKM di sekitar rumah
           </p>
         </Kartu>
-
+        {/* Hobi */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
           <section className="w-full flex-1 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
             <h2 className="mb-4 text-2xl font-bold text-utama">Hobi</h2>
@@ -60,9 +61,10 @@ export default function Home() {
               ))}
             </ul>
           </section>
+          {/* Cita-Cita */}
           <section className="w-full flex-1 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
             <h2 className="mb-4 text-2xl font-bold text-utama">Cita-cita</h2>
-            <p className="text-gray-700">Menjadi Full-Stack Web Developer. Langkah yang saya rencanakan : </p>
+            <p className="text-gray-700">Dari Cita-cita saya ada 3 plan. Di Antara 3 itu ada : </p>
             <ul className="list-decimal space-y-2 pl-5">
               {citaCita.map((item, index) => (
                 <li key={index} className="text-gray-700">
@@ -72,7 +74,7 @@ export default function Home() {
             </ul>
           </section>
         </div>
-
+        {/* Keahlian */}
         <section className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
           <h2 className="mb-4 text-2xl font-bold text-utama">Keahlian</h2>
           <div className="grid gap-4 md:grid-cols-3">
@@ -81,12 +83,11 @@ export default function Home() {
             ))}
           </div>
         </section>
-
+        {/* Jadwal Belajar */}
         <section className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
           <h2 className="mb-4 text-2xl font-bold text-slate-800">
             Jadwal Belajar
           </h2>
-
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
