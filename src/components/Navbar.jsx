@@ -12,7 +12,7 @@ const menu = [
 
 export default function Navbar() {
     const pathname = usePathname();
-    
+
     return (
         <header className="bg-utama text-white">
             <nav className="mx-auto flex max-w-5xl flex-col gap-3 px-4 py-4 md:flex-row md:items-center md:justify-between">
@@ -28,9 +28,9 @@ export default function Navbar() {
 
                         return (
                             <li key={item.href}>
-                                <Link href={item.href} className={kelas}>
+                                <a href={item.href} className={kelas}>
                                     {item.label}
-                                </Link>
+                                </a>
                             </li>
                         )
                     })}

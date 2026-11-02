@@ -1,10 +1,10 @@
 import Hero from "@/components/Hero";
 import SkillCard from "@/components/SkillCard";
 import Kartu from "@/components/Kartu";
-import HobiCard from "@/components/HobiCard";
-import CitaCitaCard from "@/components/Cita-citaCard";
-import JadwalBelajar from "@/components/JadwalBelajar";
-import Footer from "@/components/Footer";
+import ProyekCard from "@/components/ProyekCard";
+import { proyek } from "@/data/proyek";
+import Link from "next/link";
+
 
 const skills = [
   { nama: "HTML", level: "Menengah" },
@@ -14,25 +14,8 @@ const skills = [
   { nama: "JavaScript", level: "Dasar" },
 ];
 
-const hobi = [
-  { nama: "Berlari" },
-  { nama: "Berenang" },
-  { nama: "Bermain game" },
-  { nama: "Desain poster" },
-  { nama: "Editing video" },
-];
 
-const citaCita = [
-  { deskripsi: "Korps Brimob Polri" },
-  { deskripsi: "Masuk Universitas STIN/ITB" },
-  { deskripsi: "Menjadi Programer Frontend Dev" },
-];
-
-const jadwal = [
-  { hari: "Senin", waktu: "19.00 - 21.00", kegiatan: "Belajar Modul Next.js" },
-  { hari: "Selasa", waktu: "19.00 - 21.30", kegiatan: "Merangkum Modul Next.js" },
-  { hari: "Rabu", waktu: "19.00 - 23.00", kegiatan: "Mengerjakan Praktik Next.js" },
-];
+const proyekTerbaru = proyek.slice(-3);
 
 export default function Home() {
   return (
@@ -43,37 +26,6 @@ export default function Home() {
           nama="M.Iksanuddin"
           tagline="Siswa kelas XI SMK, calon Junior Web Developer di Kelas Industri UBIG."
         />
-        {/* Tentang */}
-        <Kartu judul="Tentang">
-          <p className="text-gray-600">
-            Saya tinggal di kota pasuruan dan senang mencoba hal baru di dunia teknologi. saya ingin bisa membuat website yang bermanfaat untuk sekolah dan UMKM di sekitar rumah
-          </p>
-        </Kartu>
-        {/* Hobi */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
-          <section className="w-full flex-1 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-            <h2 className="mb-4 text-2xl font-bold text-utama">Hobi</h2>
-            <ul className="list-disc space-y-2 pl-5">
-              {hobi.map((item) => (
-                <li key={item.nama} className="text-gray-700">
-                  {item.nama}
-                </li>
-              ))}
-            </ul>
-          </section>
-          {/* Cita-Cita */}
-          <section className="w-full flex-1 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-            <h2 className="mb-4 text-2xl font-bold text-utama">Cita-cita</h2>
-            <p className="text-gray-700">Dari Cita-cita saya ada 3 plan. Di Antara 3 itu ada : </p>
-            <ul className="list-decimal space-y-2 pl-5">
-              {citaCita.map((item, index) => (
-                <li key={index} className="text-gray-700">
-                  {item.deskripsi}
-                </li>
-              ))}
-            </ul>
-          </section>
-        </div>
         {/* Keahlian */}
         <section className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
           <h2 className="mb-4 text-2xl font-bold text-utama">Keahlian</h2>
@@ -83,33 +35,19 @@ export default function Home() {
             ))}
           </div>
         </section>
-        {/* Jadwal Belajar */}
-        <section className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-          <h2 className="mb-4 text-2xl font-bold text-slate-800">
-            Jadwal Belajar
+        {/* Proyek Terbaru */}
+        <section className="mt-10">
+          <h2 className="mb-4 text-2xl font-bold text-utama">
+            Proyek Terbaru
           </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="bg-[#1e293b] text-white">
-                  <th className="p-3">Hari</th>
-                  <th className="p-3">Waktu</th>
-                  <th className="p-3">Kegiatan</th>
-                </tr>
-              </thead>
-
-              <tbody className="text-sm text-slate-700">
-                {jadwal.map((item) => (
-                  <JadwalBelajar
-                    key={item.hari}
-                    hari={item.hari}
-                    waktu={item.waktu}
-                    kegiatan={item.kegiatan}
-                  />
-                ))}
-              </tbody>
-            </table>
+          <div className="grid gap-6 md:grid-cols-3">
+            {proyekTerbaru.map((item) => (
+              <ProyekCard key={item.slug} proyek={item} />
+            ))}
           </div>
+          <Link href="/proyek" className="mt-6 inline-block rounded-lg bg-utama px-5 py-2 font-semibold text-white">
+            Lihat semua proyek
+          </Link>
         </section>
       </main>
     </div>
