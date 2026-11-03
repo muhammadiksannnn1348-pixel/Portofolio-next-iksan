@@ -5,11 +5,11 @@ export default function NotFound() {
                 404
             </h1>
 
-            <h2 className="mt-4 text-2xl font-semibold text-utama">
+            <h2 className="mt-4 text-2xl font-semibold text-utama dark:text-sky-200">
                 Halaman tidak di temukan
             </h2>
 
-            <p className="mt-3 text-lg text-gray-700">
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
                 Alamat yang kamu buka tidak ada atau sudah dipindahkan.
             </p>
 

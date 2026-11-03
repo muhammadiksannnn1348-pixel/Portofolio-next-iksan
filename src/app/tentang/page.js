@@ -28,13 +28,13 @@ export const metadata = {
 export default function Tentang() {
     return (
         <main className="mx-auto max-w-5xl px-4 py-10 space-y-6">
-            <h1 className="text-3xl font-bold text-utama md:text-4xl">
+            <h1 className="text-3xl font-bold text-utama dark:text-sky-200 md:text-4xl">
                 Tentang Saya
             </h1>
 
             {/* Tentang */}
             <Kartu judul="Perkenalan" className="w-full rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <p className="text-utama">
+                <p className="text-utama dark:text-gray-300">
                     Saya tinggal di Kota Pasuruan dan senang mencoba hal baru di dunia teknologi. Saya ingin bisa membuat website yang bermanfaat untuk sekolah dan UMKM di sekitar rumah.
                 </p>
             </Kartu>
@@ -44,7 +44,7 @@ export default function Tentang() {
                 <Kartu judul="Hobi" className="w-full rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
                     <ul className="list-disc space-y-2 pl-5">
                         {hobi.map((item) => (
-                            <li key={item.nama} className="text-utama">
+                            <li key={item.nama} className="text-utama dark:text-gray-300">
                                 {item.nama}
                             </li>
                         ))}
@@ -53,10 +53,10 @@ export default function Tentang() {
 
                 {/* Cita-Cita */}
                 <Kartu judul="Cita-Cita" className="w-full rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                    <p className="text-gray-700 mb-2">Dari cita-cita saya, ada 3 plan pilihan:</p>
+                    <p className="mb-2 text-gray-700 dark:text-gray-300">Dari cita-cita saya, ada 3 plan pilihan:</p>
                     <ul className="list-decimal space-y-2 pl-5">
                         {citacita.map((item, index) => (
-                            <li key={index} className="text-utama">
+                            <li key={index} className="text-utama dark:text-gray-300">
                                 {item.deskripsi}
                             </li>
                         ))}
@@ -78,7 +78,7 @@ export default function Tentang() {
                             </thead>
                             <tbody className="text-sm">
                                 {jadwal.map((item) => (
-                                    <tr key={item.hari} className="border-b border-gray-200 hover:bg-gray-50">
+                                    <tr key={item.hari} className="border-b border-gray-200 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700">
                                         <td className="p-3 font-medium">{item.hari}</td>
                                         <td className="p-3">{item.waktu}</td>
                                         <td className="p-3">{item.kegiatan}</td>

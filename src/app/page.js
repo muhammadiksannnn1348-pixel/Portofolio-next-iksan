@@ -27,8 +27,8 @@ export default function Home() {
           tagline="Siswa kelas XI SMK, calon Junior Web Developer di Kelas Industri UBIG."
         />
         {/* Keahlian */}
-        <section className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-          <h2 className="mb-4 text-2xl font-bold text-utama">Keahlian</h2>
+        <section className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+          <h2 className="mb-4 text-2xl font-bold text-utama dark:text-sky-200">Keahlian</h2>
           <div className="grid gap-4 md:grid-cols-3">
             {skills.map((skill) => (
               <SkillCard key={skill.nama} nama={skill.nama} level={skill.level} />
@@ -37,7 +37,7 @@ export default function Home() {
         </section>
         {/* Proyek Terbaru */}
         <section className="mt-10">
-          <h2 className="mb-4 text-2xl font-bold text-utama">
+          <h2 className="mb-4 text-2xl font-bold text-utama dark:text-sky-200">
             Proyek Terbaru
           </h2>
           <div className="grid gap-6 md:grid-cols-3">
