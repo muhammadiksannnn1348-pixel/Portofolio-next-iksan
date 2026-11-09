@@ -14,7 +14,6 @@ const skills = [
   { nama: "JavaScript", level: "Dasar" },
 ];
 
-
 const proyekTerbaru = proyek.slice(-3);
 
 export default function Home() {
