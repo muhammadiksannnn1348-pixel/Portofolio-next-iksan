@@ -1,50 +1,36 @@
-# Struktur Database Portofolio
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com).
 
-Database disimpan di Supabase, project `portofolio-iksan` (region Southeast Asia, Singapore). Alamat project dan
-publishable key disimpan di `.env.local`, yang tidak ikut di-commit karena tercantum di `gitignore` (`.env*`).
+## Getting Started
 
-## Tabel `projects`
+First, run the development server:
 
-Daftar proyek portofolio M.Iksanuddin.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-| Kolom | Tipe | Keterangan |
-| === | === | === |
-| `id` | `int8` | Primary key, nomor otomatis 1, 2, 3, ... |
-| `created_at` | `timestamptz` | Waktu baris dibuat, terisi otomatis dengan `now()` |
-| `slug` | `text` | Penanda unik di alamat, misalnya `halamanprofil` (unik) |
-| `judul` | `text` | Judul proyek |
-| `deskripsi` | `text` | Kalimat singkat tentang proyek |
-| `kategori` | `text` | HTML, CSS, atau JavaScript |
-| `minggu` | `text` | Minggu proyek dibuat, misalnya `Minggu 01` |
-| `fitur` | `text[]` | Daftar hal yang dipelajari (array teks) |
-| `gambar_url` | `text` | Alamat gambar di folder `public`, misalnya
-`/proyek/proyek-profil.png` |
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-RLS aktif. Policy `Pengunjung boleh membaca proyek`: peran `anon` boleh `select` semua baris.
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-## Tabel `messages`
+This project uses [`next/font`](https://nextjs.org) to automatically optimize and load [Geist](https://vercel.com), a new font family for Vercel.
 
-Pesan dari form kontak.
+## Learn More
 
-| Kolom | Tipe | Keterangan |
-| --- | --- | --- |
-| `id` | `int8` | Primary key, nomor otomatis 1, 2, 3, ... |
-| `created_at` | `timestamptz` | Waktu baris dibuat, terisi otomatis
-dengan `now()` |
-| `nama` | `text` | Nama pengirim |
-| `email` | `text` | Email pengirim |
-| `pesan` | `text` | Isi pesan |
-RLS aktif tanpa policy, sehingga pengunjung tidak bisa membaca
-pesan. Policy `insert` dibuat di Minggu 15.
+To learn more about Next.js, take a look at the following resources:
 
-## Tabel `skills`
-Daftar keahlian Andi Pratama.
-| Kolom | Tipe | Keterangan |
-| --- | --- | --- |
-| `id` | `int8` | Primary key, nomor otomatis 1, 2, 3, ... |
-| `created_at` | `timestamptz` | Waktu baris dibuat, terisi otomatis
-dengan `now()` |
-| `nama` | `text` | Nama keahlian |
-| `level` | `text` | Dasar, Menengah, atau Mahir |
-RLS aktif. Policy `Pengunjung boleh membaca keahlian`: peran `anon`
-boleh `select` semua baris.
+- [Next.js Documentation](https://nextjs.org) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/app/building-your-application/deploying) for more details.
