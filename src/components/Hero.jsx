@@ -1,4 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
+
 export default function Hero({ nama, tagline }) {
   return (
     <section className="flex flex-col items-center gap-6 text-center md:flex-row md:text-left">
@@ -7,12 +10,20 @@ export default function Hero({ nama, tagline }) {
         alt={`Foto profil ${nama}`}
         width={180}
         height={180}
-        loading="eager"
-        className="h-[180px] w-[180px] rounded-full object-cover border-4 border-red-500"
+        priority
+        className="h-45 w-45 shrink-0 rounded-full border-4 border-primary object-cover"
       />
       <div>
-        <h1 className="text-3xl font-bold text-utama dark:text-sky-200 md:text-5xl">Halo, saya {nama}!</h1>
-        <p className="mt-3 text-lg text-utama dark:text-gray-300">{tagline}</p>
+        <h1 className="text-3xl font-bold text-primary md:text-4xl">{nama}</h1>
+        <p className="mt-3 text-lg text-muted-foreground">{tagline}</p>
+        <div className="mt-5 flex flex-wrap justify-center gap-3 md:justify-start">
+          <Link href="/proyek" className={buttonVariants({ size: "lg" })}>
+            Lihat Proyek
+          </Link>
+          <Link href="/kontak" className={buttonVariants({ variant: "outline", size: "lg" })}>
+            Hubungi Saya
+          </Link>
+        </div>
       </div>
     </section>
   );

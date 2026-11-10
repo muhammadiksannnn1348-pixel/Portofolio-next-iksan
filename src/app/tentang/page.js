@@ -28,23 +28,23 @@ export const metadata = {
 export default function Tentang() {
     return (
         <main className="mx-auto max-w-5xl px-4 py-10 space-y-6">
-            <h1 className="text-3xl font-bold text-utama dark:text-sky-200 md:text-4xl">
+            <h1 className="text-3xl font-bold text-primary md:text-4xl">
                 Tentang Saya
             </h1>
 
             {/* Tentang */}
-            <Kartu judul="Perkenalan" className="w-full rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <p className="text-utama dark:text-gray-300">
+            <Kartu judul="Perkenalan">
+                <p className="text-foreground">
                     Saya tinggal di Kota Pasuruan dan senang mencoba hal baru di dunia teknologi. Saya ingin bisa membuat website yang bermanfaat untuk sekolah dan UMKM di sekitar rumah.
                 </p>
             </Kartu>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                 {/* Hobi */}
-                <Kartu judul="Hobi" className="w-full rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                <Kartu judul="Hobi">
                     <ul className="list-disc space-y-2 pl-5">
                         {hobi.map((item) => (
-                            <li key={item.nama} className="text-utama dark:text-gray-300">
+                            <li key={item.nama} className="text-foreground">
                                 {item.nama}
                             </li>
                         ))}
@@ -52,11 +52,11 @@ export default function Tentang() {
                 </Kartu>
 
                 {/* Cita-Cita */}
-                <Kartu judul="Cita-Cita" className="w-full rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                    <p className="mb-2 text-gray-700 dark:text-gray-300">Dari cita-cita saya, ada 3 plan pilihan:</p>
+                <Kartu judul="Cita-Cita">
+                    <p className="mb-2 text-muted-foreground">Dari cita-cita saya, ada 3 plan pilihan:</p>
                     <ul className="list-decimal space-y-2 pl-5">
                         {citacita.map((item, index) => (
-                            <li key={index} className="text-utama dark:text-gray-300">
+                            <li key={index} className="text-foreground">
                                 {item.deskripsi}
                             </li>
                         ))}
@@ -66,11 +66,11 @@ export default function Tentang() {
 
             {/* Jadwal Belajar */}
             <div className="w-full">
-                <Kartu judul="Jadwal Belajar" className="w-full rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                <Kartu judul="Jadwal Belajar">
                     <div className="overflow-x-auto">
                         <table className="w-full text-left">
                             <thead>
-                                <tr className="bg-utama text-white">
+                                <tr className="bg-primary text-primary-foreground">
                                     <th className="p-3">Hari</th>
                                     <th className="p-3">Waktu</th>
                                     <th className="p-3">Kegiatan</th>
@@ -78,7 +78,7 @@ export default function Tentang() {
                             </thead>
                             <tbody className="text-sm">
                                 {jadwal.map((item) => (
-                                    <tr key={item.hari} className="border-b border-gray-200 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700">
+                                    <tr key={item.hari} className="border-b border-border hover:bg-muted">
                                         <td className="p-3 font-medium">{item.hari}</td>
                                         <td className="p-3">{item.waktu}</td>
                                         <td className="p-3">{item.kegiatan}</td>

@@ -1,20 +1,35 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useSyncExternalStore } from "react";
+import { Button } from "@/components/ui/button";
+
+function subscribeTema(callback) {
+    window.addEventListener("storage", callback);
+    window.addEventListener("tema-change", callback);
+    return () => {
+        window.removeEventListener("storage", callback);
+        window.removeEventListener("tema-change", callback);
+    };
+}
+
+function getTema() {
+    return localStorage.getItem("tema") === "gelap";
+}
+
+function getTemaServer() {
+    return false;
+}
 
 export default function TombolTema() {
-    const [gelap, setGelap] = useState(false);
+    const gelap = useSyncExternalStore(subscribeTema, getTema, getTemaServer);
 
     useEffect(() => {
-        const tema = localStorage.getItem("tema");
-        if (tema === "gelap") {
+        if (gelap) {
             document.documentElement.classList.add("dark");
-            setGelap(true);
         } else {
             document.documentElement.classList.remove("dark");
-            setGelap(false);
         }
-    }, []);
+    }, [gelap]);
 
     function gantiTema() {
         const temaBaru = !gelap;
@@ -25,17 +40,13 @@ export default function TombolTema() {
             document.documentElement.classList.remove("dark");
             localStorage.setItem("tema", "terang");
         }
-        setGelap(temaBaru);
+        window.dispatchEvent(new Event("tema-change"));
     }
 
     return (
-        <button
-            type="button"
-            onClick={gantiTema}
-            aria-label={gelap ? "Aktifkan mode terang" : "Aktifkan mode gelap"}
-            className="rounded-lg border border-white px-3 py-1 text-sm font-semibold text-white hover:border-aksen hover:bg-aksen"
-        >
+        <Button variant="outline" onClick={gantiTema} className="border-white bg-transparent text-white hover:bg-aksen hover:text-white">
             {gelap ? "Mode Terang" : "Mode Gelap"}
-        </button>
+        </Button>
+
     );
 }
