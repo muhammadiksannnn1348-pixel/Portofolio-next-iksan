@@ -1,10 +1,10 @@
+
 import FormKontak from "@/components/FormKontak";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata = {
   title: "Kontak",
-  description:
-    "Hubungi M. Iksanuddin melalui form kontak, email, atau GitHub.",
+  description: "Hubungi M. Iksanuddin melalui form kontak, email, atau GitHub.",
 };
 
 export default function Kontak() {
@@ -18,32 +18,42 @@ export default function Kontak() {
         Punya pertanyaan atau ingin bekerja sama? Isi form berikut.
       </p>
 
-      <Card className="md:col-span-2">
-        <CardContent>
-          <FormKontak />
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-2xl font-bold text-primary">Temukan Saya di</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2">
-            <li>
-              <a href="https://github.com/muhammadiksannnn1348-pixel/Portofolio-next-iksan"
-                target="_blank" className="text-aksen hover:underline">
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="mailto:muhammadiksannnn1348@gmail.com"
-                className="text-aksen hover:underline">
-                muhammadiksannnn1348@gmail.com
-              </a>
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
+      <div className="mt-8 grid grid-cols-1 items-start gap-6 md:grid-cols-2">
+        <Card>
+          <CardContent>
+            <FormKontak />
+          </CardContent>
+        </Card>
+        <Card className="h-fit">
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold text-primary">
+              Temukan Saya di
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="https://github.com/muhammadiksannnn1348-pixel/Portofolio-next-iksan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-aksen hover:underline"
+                >
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:muhammadiksannnn1348@gmail.com"
+                  className="text-aksen hover:underline"
+                >
+                  muhammadiksannnn1348@gmail.com
+                </a>
+              </li>
+            </ul>
+          </CardContent>
+        </Card>
+      </div>
     </main>
   );
 }
