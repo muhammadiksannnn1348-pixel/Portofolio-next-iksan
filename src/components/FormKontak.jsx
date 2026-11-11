@@ -18,26 +18,11 @@ export default function FormKontak() {
         e.preventDefault();
         const errorBaru = {};
 
-        if (nama.trim() === "") {
-            errorBaru.nama = "Nama wajib diisi.";
-        }
-
-        if (!email.includes("@")) {
-            errorBaru.email =
-                "Email harus memuat tanda @, contoh nama@gmail.com.";
-        }
-
-        if (hp.length < 10) {
-            errorBaru.hp = "Nomor HP minimal 10 angka.";
-        }
-
-        if (keperluan === "") {
-            errorBaru.keperluan = "Pilih salah satu keperluan.";
-        }
-
-        if (pesan.trim().length < 10) {
-            errorBaru.pesan = "Pesan minimal 10 karakter.";
-        }
+        if (nama.trim() === "") { errorBaru.nama = "Nama wajib diisi."; }
+        if (!email.includes("@")) { errorBaru.email = "Email harus memuat tanda @, contoh nama@gmail.com."; }
+        if (hp.length < 10) { errorBaru.hp = "Nomor HP minimal 10 angka."; }
+        if (keperluan === "") { errorBaru.keperluan = "Pilih salah satu keperluan."; }
+        if (pesan.trim().length < 10) { errorBaru.pesan = "Pesan minimal 10 karakter."; }
 
         setError(errorBaru);
         setBerhasil(Object.keys(errorBaru).length === 0);

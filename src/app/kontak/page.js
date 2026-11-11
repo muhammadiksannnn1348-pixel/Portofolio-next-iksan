@@ -30,15 +30,15 @@ export default function Kontak() {
         <CardContent>
           <ul className="space-y-2">
             <li>
-              <a href="https://github.com/BagusHidayat21"
+              <a href="https://github.com/muhammadiksannnn1348-pixel/Portofolio-next-iksan"
                 target="_blank" className="text-aksen hover:underline">
                 GitHub
               </a>
             </li>
             <li>
-              <a href="mailto:andi.pratama@example.com"
+              <a href="mailto:muhammadiksannnn1348@gmail.com"
                 className="text-aksen hover:underline">
-                andi.pratama@example.com
+                muhammadiksannnn1348@gmail.com
               </a>
             </li>
           </ul>
